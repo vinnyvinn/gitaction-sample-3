@@ -13,7 +13,7 @@ jobs:
       - name: Get Code
         uses: actions/checkout@v3
       - name: Install NodeJs
-        uses: actions/node-setup@v3
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-versions }}
       - name: Install Dependencies
