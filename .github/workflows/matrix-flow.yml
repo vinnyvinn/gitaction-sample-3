@@ -2,10 +2,12 @@ name: Matrixe Project
 on: push
 
 jobs:
-  matrix:
-    node-versions: [10,12,14]
-    os: [ubuntu-latest,windows-latest]
   deploy:
+    strategy:
+      matrix:
+        node-versions: [12,14,16]
+        os: [ubuntu-latest,windows-latest]
+
     runs-on: ${{ matrix.os}}
     steps:
       - name: Get Code
