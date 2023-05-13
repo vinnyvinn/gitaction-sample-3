@@ -1,0 +1,9 @@
+name: Reuseable Workflow
+on: workflow_call
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy Project
+        run: echo Initiate Deployment
