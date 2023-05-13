@@ -3,10 +3,17 @@ on: push
 
 jobs:
   deploy:
+    continue-on-error: true
     strategy:
       matrix:
         node-versions: [12,14,16]
         os: [ubuntu-latest,windows-latest]
+        include:
+          - node-versions: 18
+            os: ubuntu-latest
+        exclude:
+          - node-versions: 12
+            os: windows-latest
 
     runs-on: ${{ matrix.os}}
     steps:
